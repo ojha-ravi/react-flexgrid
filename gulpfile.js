@@ -58,17 +58,17 @@ gulp.task('transpile_watch', function() {
 	.pipe(gulp.dest(filepath.js.dest));
 });
 
-gulp.task('fonts_watch', function() {
-	return gulp.src([
-		'jspm_packages/npm/font-awesome@4.3.0/fonts/*',
-		'jspm_packages/npm/react-widgets@2.7.3/dist/fonts/*'
-	])
-	.pipe(watch([
-		'jspm_packages/npm/font-awesome@4.3.0/fonts/*',
-		'jspm_packages/npm/react-widgets@2.7.3/dist/fonts/*'
-	]))
-	.pipe(gulp.dest('dist/fonts'));
-})
+// gulp.task('fonts_watch', function() {
+// 	return gulp.src([
+// 		'jspm_packages/npm/font-awesome@4.3.0/fonts/*',
+// 		'jspm_packages/npm/react-widgets@2.7.3/dist/fonts/*'
+// 	])
+// 	.pipe(watch([
+// 		'jspm_packages/npm/font-awesome@4.3.0/fonts/*',
+// 		'jspm_packages/npm/react-widgets@2.7.3/dist/fonts/*'
+// 	]))
+// 	.pipe(gulp.dest('dist/fonts'));
+// })
 
 gulp.task('connect', function() {
 	return connect.server({
@@ -77,4 +77,4 @@ gulp.task('connect', function() {
 	});
 });
 
-gulp.task("default", ["fonts_watch", "html_watch", "less_watch", "transpile_watch", "connect"]);
+gulp.task("default", ["html_watch", "less_watch", "transpile_watch", "connect"]);
